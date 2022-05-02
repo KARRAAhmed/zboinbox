@@ -1,0 +1,158 @@
+{
+    "resources": [
+        {
+            "name": "localService/Product.json"
+        },
+        {
+            "name": "localService/tableview/WorkflowLogCollection.json"
+        },
+        {
+            "name": "localService/tableview/TaskDefinitionCollection.json"
+        },
+        {
+            "name": "localService/tableview/TaskCollection.json"
+        },
+        {
+            "name": "localService/tableview/ProcessingLogCollection.json"
+        },
+        {
+            "name": "localService/tableview/CustomAttributeDefinitionCollection.json"
+        },
+        {
+            "name": "localService/tableview/CustomAttributeCollection.json"
+        },
+        {
+            "name": "localService/tableview/ConsumerScenarioCollection.json"
+        },
+        {
+            "name": "localService/WorkflowLogCollection.json"
+        },
+        {
+            "name": "localService/UserInfoCollection.json"
+        },
+        {
+            "name": "localService/TaskObjectCollection.json"
+        },
+        {
+            "name": "localService/TaskDescriptionCollection.json"
+        },
+        {
+            "name": "localService/TaskDefinitionCollection.json"
+        },
+        {
+            "name": "localService/TaskCollection.json"
+        },
+        {
+            "name": "localService/SupportInfo.json"
+        },
+        {
+            "name": "localService/Supplier.json"
+        },
+        {
+            "name": "localService/PurchaseOrderItem.json"
+        },
+        {
+            "name": "localService/PurchaseOrder.json"
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "localService/ProcessingLogCollection.json"
+        },
+        {
+            "name": "localService/FilterOptionCollection.json"
+        },
+        {
+            "name": "localService/CustomAttributeDefinitionCollection.json"
+        },
+        {
+            "name": "localService/CustomAttributeCollection.json"
+        },
+        {
+            "name": "localService/CommentCollection.json"
+        },
+        {
+            "name": "localService/AttachmentCollection.json"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "view/S3Custom.controller.js"
+        },
+        {
+            "name": "view/S2Custom.controller.js"
+        },
+        {
+            "name": "model/formatter.js"
+        },
+        {
+            "name": "localService/mockRequests.js"
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "manifest-bundle.zip"
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "view/S2Custom-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "view/S3Custom-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "model/formatter-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "localService/mockRequests-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "Component-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "../../../../../sap-ui-version.json"
+        },
+        {
+            "name": "neo-app.json"
+        },
+        {
+            "name": "di.code-validation.core_issues.json"
+        },
+        {
+            "name": "localService/tableview/metadata.xml"
+        },
+        {
+            "name": "localService/ZSDGW_OFFICE_ORDER_APP_SRV/metadata.xml"
+        },
+        {
+            "name": "view/attachmentCustPanel.fragment.xml"
+        },
+        {
+            "name": "view/S3_CustomerExtensionForObjectHeaderCustom.fragment.xml"
+        },
+        {
+            "name": "view/InfoGenPanelExtension.fragment.xml"
+        },
+        {
+            "name": "localService/metadata.xml"
+        },
+        {
+            "name": "visual_ext_index.html"
+        },
+        {
+            "name": "index.html"
+        }
+    ]
+}

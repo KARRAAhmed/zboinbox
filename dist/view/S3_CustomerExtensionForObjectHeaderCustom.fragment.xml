@@ -1,0 +1,25 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:layout="sap.ui.layout"
+	xmlns:sap.ca.ui="sap.ca.ui" xmlns:suite="sap.suite.ui.commons">
+	<ObjectHeader icon="sap-icon://detail-view"
+		id="DocHedar"
+		iconDensityAware="true" 
+		responsive="true" 
+		title="Document Entrant N° {path: 'BoModel>Zrefde', formatter: '.formatter.refFormatter'}"
+		titleActive="true"
+		titlePress="onRefDocPressed"
+		intro="{ parts: ['BoModel>Zdu','BoModel>Zdi','BoModel>Zdc'], formatter: '.formatter.typeDocFormatter' }">
+		<attributes>
+			<ObjectAttribute title="{i18n>CreeLe}" text="{ path: 'BoModel>DateCre' ,type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium', source: { pattern: 'yyyy/MM/dd' }} }"/>
+			<ObjectAttribute title="{i18n>emiLe}" text="{ path: 'BoModel>Zdem' ,type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium', source: { pattern: 'yyyy/MM/dd' }} }"/>
+			<ObjectAttribute title="{i18n>Rec}" text="{BoModel>Zrecption}" 	visible="{= ${BoModel>Zstatid} === '004' || ${BoModel>Zstatid} === '005' ? true : false}" />
+		</attributes>
+		<statuses>
+ 			<ObjectStatus
+				title="Statut"
+				class="sapUiSmallMarginBottom"
+				icon="{path: 'BoModel>Zstatid', formatter: '.formatter.statusIconFormatter'}"
+				text="{BoModel>Zstatde}"
+				state="{path: 'BoModel>Zstatid', formatter: '.formatter.statutFormatter'}"/>
+		</statuses>
+	</ObjectHeader>
+</core:FragmentDefinition>

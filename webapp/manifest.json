@@ -1,0 +1,123 @@
+{
+	"_version": "1.1.0",
+	"sap.app": {
+		"_version": "1.1.0",
+		"id": "cross.fnd.fiori.inbox.CA_FIORI_INBOXExtension1",
+		"type": "application",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{SHELL_TITLE}}",
+		"dataSources": {
+			"ZSDGW_OFFICE_ORDER_APP_SRV": {
+				"uri": "/sap/opu/odata/sap/ZSDGW_OFFICE_ORDER_APP_SRV/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/ZSDGW_OFFICE_ORDER_APP_SRV/metadata.xml"
+				}
+			}
+		},
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponentForManifest",
+			"version": "0.0.0"
+		}
+	},
+	"sap.ui": {
+		"_version": "1.1.0",
+		"technology": "UI5",
+		"icons": {
+			"icon": "sap-icon://approvals",
+			"favIcon": "./resources/sap/ca/ui/themes/base/img/favicon/Approve_Requests.ico"
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_bluecrystal"
+		]
+	},
+	"sap.ui5": {
+		"_version": "1.1.0",
+		"dependencies": {
+			"minUI5Version": "1.38.9"
+		},
+		"extends": {
+			"component": "cross.fnd.fiori.inbox",
+			"extensions": {
+				"sap.ui.controllerExtensions": {
+					"cross.fnd.fiori.inbox.view.S3": {
+						"controllerName": "cross.fnd.fiori.inbox.CA_FIORI_INBOXExtension1.view.S3Custom"
+					},
+					"cross.fnd.fiori.inbox.view.S2": {
+						"controllerName": "cross.fnd.fiori.inbox.CA_FIORI_INBOXExtension1.view.S2Custom"
+					}
+				},
+				"sap.ui.viewModifications": {
+					"cross.fnd.fiori.inbox.view.S3": {
+						"MIBNoteIconTabFilter": {
+							"visible": false
+						},
+						"MIBObjectLinksTabFilter": {
+							"visible": false
+						},
+						"ARuserName": {
+							"visible": false
+						},
+						"attachmentComponent": {
+							"visible": false
+						}
+					},
+					"cross.fnd.fiori.inbox.view.S2": {
+						"ATTR1": {
+							"visible": false
+						},
+						"STAT1": {
+							"visible": false
+						}
+					}
+				},
+				"sap.ui.viewExtensions": {
+					"cross.fnd.fiori.inbox.view.S3": {
+						"CustomerExtensionForInfoTabContent": {
+							"className": "sap.ui.core.Fragment",
+							"fragmentName": "cross.fnd.fiori.inbox.CA_FIORI_INBOXExtension1.view.InfoGenPanelExtension",
+							"type": "XML"
+						},
+						"CustomerExtensionForObjectHeader": {
+							"className": "sap.ui.core.Fragment",
+							"fragmentName": "cross.fnd.fiori.inbox.CA_FIORI_INBOXExtension1.view.S3_CustomerExtensionForObjectHeaderCustom",
+							"type": "XML"
+						},
+						"CustomerExtensionForAttachmentTabContent": {
+							"className": "sap.ui.core.Fragment",
+							"fragmentName": "cross.fnd.fiori.inbox.CA_FIORI_INBOXExtension1.view.attachmentCustPanel",
+							"type": "XML"
+						}
+					}
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"BoModel": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZSDGW_OFFICE_ORDER_APP_SRV"
+			}
+		}
+	},
+	"sap.platform.abap": {
+		"uri": "/sap/bc/ui5_ui5/sap/zbomyinbox/webapp",
+		"_version": "1.1.0"
+	}
+}

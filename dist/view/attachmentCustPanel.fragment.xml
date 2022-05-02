@@ -1,0 +1,26 @@
+<core:FragmentDefinition 
+	xmlns="sap.m" 
+	xmlns:core="sap.ui.core" 
+	xmlns:sap.ca.ui="sap.ca.ui" 
+	xmlns:layout="sap.ui.layout"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:suite="sap.suite.ui.commons">
+	<UploadCollection id="pjUploader" 
+		tooltip="{i18n>attachmentText}" 
+		items="{ path: 'piecesJointesModel>/', templateShareable: false }"
+		mode="SingleSelectMaster" 
+		beforeUploadStarts=".pjUpdateHdler.onBeforeUploadStarts" 
+		uploadComplete=".pjUpdateHdler.onUploadComplete"
+		instantUpload="false">
+		<items>
+			<UploadCollectionItem 
+				fileName="{piecesJointesModel>FileName}" 
+				mimeType="{piecesJointesModel>Mimetype}" 
+				enableEdit="false"
+				enableDelete="false" 
+				visibleDelete="true"
+				visibleEdit="false">
+			</UploadCollectionItem>
+		</items>
+	</UploadCollection>
+</core:FragmentDefinition>

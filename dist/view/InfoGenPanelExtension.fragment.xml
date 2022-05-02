@@ -1,0 +1,100 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:sap.ca.ui="sap.ca.ui" xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout" xmlns:suite="sap.suite.ui.commons">
+	<VBox class="sapUiSmallMargin" id="VboxContainer">
+		<VBox>
+			<f:SimpleForm id="infoGenForm" editable="false" layout="ResponsiveGridLayout" title="{i18n>DonnesGen}" labelSpanXL="4" labelSpanL="4"
+				labelSpanM="6" labelSpanS="4" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+				singleContainerFullSize="false" adjustLabelSpan="false">
+				<f:content>
+					<core:Title text=""/>
+					<Label text="{i18n>RefDoc}"/>
+					<!--<ObjectStatus text="" active="true" state="None" press="onRefDocPressed"/>-->
+					<Link text="{path: 'BoModel>Zrefde', formatter: '.formatter.refFormatter'}" emphasized="true" wrapping="true" press="onRefDocPressed"/>
+					<!--<ObjectStatus-->
+					<!--text="{ path: 'BoModel>Zrefde' , formatter:'sap.ui.core.format.NumberFormat', formatOptions: { pattern: '1234/5678'} }"-->
+					<!--active="true" state="None" press="onRefDocPressed"/>-->
+					<Label text="{i18n>Exp}"/>
+					<Text text="{BoModel>Zlibclient}"/>
+					<Label text="{i18n>RefExp}"/>
+					<Text text="{BoModel>RefExp}"/>
+					<Label text="{i18n>Categorie}"/>
+					<Text text="{BoModel>Zlibcat}"/>
+					<Label text="{i18n>NatureRecep}"/>
+					<Text text="{BoModel>ZlibNr}"/>
+					<Label text="{i18n>DateEmission}"/>
+					<Text text="{ path: 'BoModel>Zdem' ,type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium', source: { pattern: 'yyyy/MM/dd' }} }"/>
+					<core:Title text=""/>
+					<Label text="{i18n>Statut}"/>
+					<!--<Text text="{BoModel>Zstatde}"/>-->
+					<ObjectStatus text="{BoModel>Zstatde}" active="false" state="{path: 'BoModel>Zstatid', formatter: '.formatter.statutFormatter'}"
+						icon="{path: 'BoModel>Zstatid', formatter: '.formatter.statusIconFormatter'}"/>
+					<Label text="{i18n>RefApav}"/>
+					<Text text="{BoModel>RefApave}"/>
+					<Label text="{i18n>SsCat}"/>
+					<Text text="{BoModel>Zlibscat}"/>
+					<Label text="{i18n>TypeObjet}"/>
+					<Text text="{BoModel>Zlibtypobj}"/>
+					<Label text="{i18n>DateArrive}"/>
+					<Text text="{ path: 'BoModel>Zdar' ,type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium', source: { pattern: 'yyyy/MM/dd' }} }"/>
+					<Label text="{i18n>DateEcheance}"/>
+					<Text text="{ path: 'BoModel>Zdec' ,type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium', source: { pattern: 'yyyy/MM/dd' }} }"/>
+				</f:content>
+			</f:SimpleForm>
+			<f:SimpleForm id="docTypeForm" editable="false" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="6" labelSpanS="4"
+				emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="3" singleContainerFullSize="false"
+				adjustLabelSpan="false">
+				<f:content>
+					<core:Title text=""/>
+					<Label text="{i18n>typeDocUrgent}"/>
+					<Text text="{path: 'BoModel>Zdu', type: 'sap.ui.model.odata.type.Boolean', constraints: {nullable: false}}"/>
+					<core:Title text=""/>
+					<Label text="{i18n>typeDocInterne}"/>
+					<Text text="{path: 'BoModel>Zdi', type: 'sap.ui.model.odata.type.Boolean', constraints: {nullable: false}}"/>
+					<core:Title text=""/>
+					<Label text="{i18n>TypeDocConfi}"/>
+					<Text text="{path: 'BoModel>Zdc', type: 'sap.ui.model.odata.type.Boolean', constraints: {nullable: false}}"/>
+				</f:content>
+			</f:SimpleForm>
+		</VBox>
+		<f:SimpleForm id="serviceForm" title="{i18n>AffectationService}" editable="false" layout="ResponsiveGridLayout" labelSpanXL="4"
+			labelSpanL="4" labelSpanM="6" labelSpanS="4" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1"
+			columnsM="1" singleContainerFullSize="false" adjustLabelSpan="false">
+			<f:content>
+				<Table id="idServiceTable" inset="false" items="{ path: 'BoModel>DOC_SERVICESSet' }">
+					<columns>
+						<Column width="40%">
+							<Text text="{i18n>Service}"/>
+						</Column>
+						<Column width="20%">
+							<Text text="{i18n>CodeServiceTable}"/>
+						</Column>
+						<Column width="20%">
+							<Text text="{i18n>Pilote}"/>
+						</Column>
+						<Column width="20%">
+							<Text text="{i18n>Selection}"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem highlight="{path:'BoModel>Ztypepilote', formatter:'.formatter.formatRowHighlight'}">
+							<cells>
+								<Link text="{BoModel>Zlibserv}" emphasized="{BoModel>Ztypepilote}" wrapping="true" press="openEmployeQuickView"/>
+								<!--<Text text="{BoModel>Zlibserv}" visible="{BoModel>Ztypepilote}"/>-->
+								<Text text="{BoModel>Zcserv}"/>
+								<RadioButton selected="{BoModel>Ztypepilote}" enabled="false"/>
+								<CheckBox selected="{BoModel>Ztypeselection}" enabled="false"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</f:content>
+		</f:SimpleForm>
+		<f:SimpleForm id="commentForm" editable="false" layout="ResponsiveGridLayout" title="Commentaires" labelSpanXL="4" labelSpanL="4"
+			labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2"
+			columnsL="2" columnsM="1" singleContainerFullSize="false">
+			<f:content>
+				<TextArea id="documentsText" rows="5" value="{BoModel>Zcom}" editable="false" width="100%"/>
+			</f:content>
+		</f:SimpleForm>
+	</VBox>
+</core:FragmentDefinition>
